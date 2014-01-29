@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+  
     //Load RVC WWW
     NSURL *url = [NSURL URLWithString:@"http://rockvalleycollege.edu"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
@@ -46,6 +46,7 @@
     }
     
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -54,9 +55,6 @@
 
 - (IBAction)btnGo:(id)sender {
     //Send textbox URL to Browser
-    NSURL *url = [NSURL URLWithString:self.txtURL.text];
-    NSURLRequest *req;
-    req = [NSURLRequest requestWithURL:url];
     
     //Check id URL is valid and exists
     
@@ -77,7 +75,9 @@
     }
     else
     {
-        NSURLRequest *req = [NSURLRequest requestWithURL:url];
+        NSURL *url = [NSURL URLWithString:self.txtURL.text];
+        NSURLRequest *req;
+        req = [NSURLRequest requestWithURL:url];
         [self.webview loadRequest:req];
     }
 
